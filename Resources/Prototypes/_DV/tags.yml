@@ -281,3 +281,6 @@
 
 - type: Tag
   id: PurifyingSalts
+
+- type: Tag
+  id: ZookeeperVisible # Marks animal mobs as visible to the zookeeper HUD (hunger, thirst, health bars)

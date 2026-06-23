@@ -19,7 +19,7 @@ namespace Content.Client.Overlays;
 /// <summary>
 /// Overlay that shows a health bar on mobs.
 /// </summary>
-public sealed class EntityHealthBarOverlay : Overlay
+public class EntityHealthBarOverlay : Overlay // DeltaV - removed sealed to allow subclasses
 {
     private readonly IEntityManager _entManager;
     private readonly IPrototypeManager _prototype;
@@ -75,6 +75,9 @@ public sealed class EntityHealthBarOverlay : Overlay
                 continue;
 
             if (damageableComponent.DamageContainerID == null || !DamageContainers.Contains(damageableComponent.DamageContainerID))
+                continue;
+
+            if (!ShouldShow(uid)) // DeltaV - allow subclasses to add extra filtering
                 continue;
 
             // we use the status icon component bounds if specified otherwise use sprite
@@ -157,6 +160,9 @@ public sealed class EntityHealthBarOverlay : Overlay
 
         return (0, true);
     }
+
+    // DeltaV - hook for subclasses to filter which entities get a health bar
+    protected virtual bool ShouldShow(EntityUid uid) => true;
 
     public Color GetProgressColor(float progress, bool crit)
     {

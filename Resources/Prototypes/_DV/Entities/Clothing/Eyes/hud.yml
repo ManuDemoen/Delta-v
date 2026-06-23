@@ -93,3 +93,18 @@
     - HighRiskItem
   - type: StaticPrice
     price: 2500
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesHudZookeeper
+  name: zookeeper monocle
+  description: A heads-up display that scans animal mobs in view and provides data about their hunger, thirst, and health status.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Eyes/Hud/zoomonocle.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Eyes/Hud/zoomonocle.rsi
+  - type: ShowZookeeperHud
+  - type: Tag
+    tags:
+    - WhitelistChameleon

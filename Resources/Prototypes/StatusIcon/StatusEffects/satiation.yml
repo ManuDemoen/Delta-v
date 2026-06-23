@@ -27,6 +27,13 @@
     sprite: /Textures/Interface/Misc/food_icons.rsi
     state: starving
 
+- type: satiationIcon
+  id: HungerIconSatiated # DeltaV - shown by zookeeper HUD when animal hunger is Okay
+  parent: HungerIcon
+  icon:
+    sprite: /Textures/_DV/Icons/zoo.rsi
+    state: satiated
+
 #Thirst
 - type: satiationIcon
   id: ThirstIcon
@@ -55,3 +62,10 @@
   icon:
     sprite: /Textures/Interface/Misc/food_icons.rsi
     state: parched
+
+- type: satiationIcon
+  id: ThirstIconHydrated # DeltaV - shown by zookeeper HUD when animal thirst is Okay
+  parent: ThirstIcon
+  icon:
+    sprite: /Textures/_DV/Icons/zoo.rsi
+    state: hydrated
